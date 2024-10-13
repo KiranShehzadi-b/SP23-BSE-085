@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+ 
+    
+}
+
+.section {
+    width: 100%;
+    height: 33.3vh; 
+    background-color: aqua; 
+}
+
+
+
+.section-middle {
+    background-color: aqua; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.form-container {
+    background-color: yellow;
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.error {
+    color: red; 
+}
+.container{
+    background-color: aqua;
+}
+
+
+input {
+    border: 2px solid red!important;
+}
