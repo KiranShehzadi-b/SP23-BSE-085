@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List API Client</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4 text-center text-primary">To-Do List</h1>
+
+        <button id="showFormBtn" class="btn btn-info mb-3" onclick="showForm()">Add To-Do</button>
+
+  
+        <div id="addTodoForm" class="card p-3 mb-3" style="display: none;">
+            <div class="mb-3">
+                <label for="todoTitle" class="form-label">Title</label>
+                <input type="text" class="form-control" id="todoTitle" placeholder="Enter Title" required>
+            </div>
+            <div class="mb-3">
+                <label for="todoStatus" class="form-label">Status (true/false)</label>
+                <input type="text" class="form-control" id="todoStatus" placeholder="Enter true or false" required>
+            </div>
+            <button class="btn btn-success" id="addTodoBtn" style="float: right;">Add</button>
+        </div>
+
+        
+        <div id="todo-container"></div>
+    </div>
+
+   
+    <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit To-Do</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="editTodoId">
+                    <div class="mb-3">
+                        <label for="editTodoTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="editTodoTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editTodoStatus" class="form-label">Status (true/false)</label>
+                        <input type="text" class="form-control" id="editTodoStatus" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="updateTodoBtn">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="code.js"></script>
+</body>
+</html>
