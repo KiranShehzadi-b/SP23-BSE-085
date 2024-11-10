@@ -1,0 +1,387 @@
+*body{
+    margin: 0px;
+}
+.top-header {
+    background-color: black;
+    color: white;
+    text-align: left;
+    padding: 5px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-wrapper {
+    position: relative;
+    height: 30px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.scrolling-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: scroll-up 9s linear infinite;
+}
+
+.scrolling-text p {
+    margin: 0;
+    line-height: 30px;
+    font-size: 14px;
+    color: white;
+    opacity: 1;
+}
+
+@keyframes scroll-up {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(0); }
+    33% { transform: translateY(-30px); }
+    58% { transform: translateY(-30px); }
+    66% { transform: translateY(-60px); }
+    100% { transform: translateY(-60px); }
+}
+
+.text{
+    color:white;
+    background-color: black;
+}
+.search-logo{
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+    justify-self: center;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 20px;
+}
+.search {
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    width: 100%;
+}
+
+.form-control {
+    border-radius: 0.25rem;
+}
+
+.btn {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+.logo{
+    width: 55%;
+    justify-self: center;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 5px;
+}
+
+.image-element {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.account-cart{
+    width: 25%;
+    display:flex;
+    align-items: right;
+    justify-content: right;
+    justify-self: right;
+}
+.nav-bar{
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+}
+.nav1{
+    width: 100%;
+    max-width: 100%;
+}
+.nav2{
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+}
+.video-image{
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+}
+
+.video{
+    width: 50%;
+}
+.image{
+    width: 50%;
+}
+.video-image-below{
+}
+
+.search, .logo, .account-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+search .input-group {
+    width: 100%;
+}
+
+.search .form-control {
+    border-radius: 0.25rem;
+}
+
+.search .btn {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.search, .logo, .account-cart {
+    flex: 1;
+    text-align: center;
+    margin-top: 20px;
+}
+.search{
+    width: 33.3%;
+    justify-self: left;
+}
+.content{
+    align-items: center;
+    justify-content: center;
+}
+.account-cart{
+    text-align: right;
+}
+.navbar{
+    max-width: 100%;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.custom-container {
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+}
+.video-image {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    max-width: 100%;
+    padding-top: 20px;
+    padding-right: 0px;
+    margin-bottom: 10px;
+}
+
+.btn-reddish-brown {
+    color: #fff;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+    border-radius: 20px;
+    padding: 10px 10px;
+    text-align: center;
+    background: #ba4444 !important;
+    border: none !important;
+}
+
+.btn-reddish-brown:hover {
+    color: #fff;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+    text-align: center;
+    background: #ba4444 !important;
+    border: none !important;
+}
+
+.gap-3 {
+    gap: 20px;
+}
+.rte-block{
+    color: #fff;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+}
+.video-image-below{
+    max-width: 100%;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.rte--strong{
+    text-align: left;
+}
+.enlarge-text{
+    text-align: left;
+}
+.card{
+    border: none;
+}
+.img-fluid{
+    border-radius: 8px;
+}
+.container-fluid{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.plan{
+    background-color:#ba4444 ;
+    border-radius: 8px;
+}
+.texting{
+    display:flex;
+}
+.heading{
+    font-size: calc(var(--typeHeaderSize)* .7);
+    float: inline-start;
+    color: #fff;
+}
+.type-banner p {
+    display: inline-block;
+    line-height: 1.2;
+    margin: 7px;
+    vertical-align: middle;
+    color: #fff;
+}
+.btn-now{
+    color:#ba4444 ;
+    background-color: white;
+    border-radius: 10px;
+}
+.paragraph{
+    color: #fff;
+}
+.fonty{
+    font-family: Sans-serif Arial, Helvetica, sans-serif;
+    font-size: smaller;
+    font-weight: bold;
+}
+.fonty2{
+    font-family: Sans-serif Arial, Helvetica, sans-serif;
+    font-size: small;
+    font-weight: bold;
+}
+.simple {
+    background-color: #f8f9fa;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.simple img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.container-fluid2 {
+    height: 250px;
+    overflow: hidden;
+}
+
+.image-container2 {
+    height: auto;
+}
+
+.card-img-top2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container3{
+    height: 250px;
+}
+
+.card-with-text {
+    position: relative;
+}
+
+.image-container3 {
+    position: relative;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+    padding: 20px;
+    text-align: center;
+   
+}
+
+.btn-white {
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-white:hover {
+    background-color: #f0f0f0;
+}
+.text-shadow {
+    text-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+}
+.text-overlay2{
+    font-family: sans-serif;
+    color: aliceblue;
+   box-shadow: #fff;
+}
+.image-container{
+    opacity:10;
+}
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(240, 240, 240, 0.2); 
+    border-radius: 0.25rem; 
+    pointer-events: none; 
+}
+.custom-container {
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+}
+
+.bg-image-opacity {
+    opacity: 6px;
+    z-index: 5;
+    /* Change this value for desired opacity */
+    border-radius: 5px;
+}
