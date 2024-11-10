@@ -1,9 +1,0 @@
-
-Project 1:
-Name: Project 1
-Summary: This is a summary of Project 1.
-Description Button: Show Description
-
-
-
-
