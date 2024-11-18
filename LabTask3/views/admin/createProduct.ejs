@@ -1,0 +1,25 @@
+<h4>Create Product</h4>
+<form action="/admin/product" method="POST">
+  <div class="form-group mb-3">
+    <label for="productId" class="form-label">Product ID</label>
+    <input type="number" name="id" class="form-control" id="productId" placeholder="Enter Product ID" required>
+  </div>
+  <div class="form-group mb-3">
+    <label for="productTitle" class="form-label">Title</label>
+    <input name="title" type="text" class="form-control" id="productTitle" placeholder="Enter Title" required>
+    <small id="titleHelp" class="form-text text-muted">Product Title</small>
+  </div>
+  <div class="form-group mb-3">
+    <label for="productDescription" class="form-label">Description</label>
+    <textarea name="description" class="form-control" id="productDescription" placeholder="Enter Description" required></textarea>
+    <small id="descriptionHelp" class="form-text text-muted">Product Details</small>
+  </div>
+  <div class="form-group mb-3">
+    <label for="productPrice" class="form-label">Price</label>
+    <input name="price" type="text" class="form-control" id="productPrice" placeholder="Enter Price in PKR" required>
+    <small id="priceHelp" class="form-text text-muted">Product Price in PKR</small>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Create New Product</button>
+  </div>
+</form>
