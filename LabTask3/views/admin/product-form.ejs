@@ -1,0 +1,68 @@
+<h4>Create Product</h4>
+<p>If we do not give an action attribute, the form is submitted to the URL on which it was rendered.</p>
+
+<form action="/admin/products/create" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="titleInput">Title</label>
+    <input
+      name="title"
+      type="text"
+      class="form-control"
+      id="titleInput"
+      placeholder="Enter Title"
+    />
+    <small class="form-text text-muted">Product Title</small>
+  </div>
+
+  <div class="form-group">
+    <label for="descriptionInput">Description</label>
+    <textarea
+      name="description"
+      class="form-control"
+      id="descriptionInput"
+      placeholder="Enter Description"
+    ></textarea>
+    <small class="form-text text-muted">Product Details</small>
+  </div>
+
+  <div class="form-group">
+    <label for="priceInput">Price</label>
+    <input
+      name="price"
+      type="text"
+      class="form-control"
+      id="priceInput"
+      placeholder="Enter Price"
+    />
+    <small class="form-text text-muted">Product Price in PKR</small>
+  </div>
+
+  <div class="form-group">
+    <label for="categorySelect">Category</label>
+    <select name="category" class="form-control" id="categorySelect" required>
+      <option value="" disabled selected>Select category for product</option>
+      <% categories.forEach((category) => { %>
+        <option value="<%= category._id %>"><%= category.name %></option>
+      <% }); %>
+    </select>
+    <small class="form-text text-muted">Select a category for the product</small>
+  </div>
+
+  <!-- New File Upload Input -->
+  <div class="form-group">
+    <label for="imageInput">Upload Image</label>
+    <input
+      name="file"
+      type="file"
+      class="form-control"
+      id="imageInput"
+      accept="image/*"
+      required
+    />
+    <small class="form-text text-muted">Upload a product image (e.g., JPG, PNG, JPEG)</small>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-info">Create New Product</button>
+  </div>
+</form>

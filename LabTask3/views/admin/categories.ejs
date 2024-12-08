@@ -1,0 +1,29 @@
+<h3><%- pageTitle %></h3>
+
+<a href="/admin/categories/create" class="btn btn-info">Create New Category</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th>Slug</th>
+            <th>Product Count</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (let index = 0; index < categories.length; index++) { %>
+            <tr>
+                <td><%= categories[index].name %></td>
+                <td><%= categories[index].slug %></td>
+                <td><%= categories[index].productCount %></td>
+                <td><%= categories[index].description %></td>
+                <td>
+                    <a href="/admin/categories/edit/<%= categories[index]._id %>" class="btn btn-warning">Edit</a>
+                    <a href="/admin/categories/delete/<%= categories[index]._id %>" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
