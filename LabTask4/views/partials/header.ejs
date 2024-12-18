@@ -1,0 +1,40 @@
+<header>
+    <div class="top-bar">
+      <% if (currentRoute === '/admin/products') { %>
+        <!-- Form for /admin/products route -->
+        <form action="/admin/products" method="GET" class="d-flex align-items-center">
+          <input type="search" name="search" class="form-control me-2" placeholder="Search..."
+                 value="<%= typeof searchQuery !== 'undefined' ? searchQuery : '' %>" aria-label="Search products">
+          <button type="submit" class="btn btn-primary d-flex align-items-center">
+            <i class="fas fa-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </form>
+      <% } else if (currentRoute === '/homePage') { %>
+        <!-- Form for /homePage route -->
+        <form action="/homePage" method="GET" class="d-flex align-items-center">
+          <input type="search" name="search" class="form-control me-2" placeholder="Search..."
+                 value="<%= typeof searchQuery !== 'undefined' ? searchQuery : '' %>" aria-label="Search on home page">
+          <button type="submit" class="btn btn-primary d-flex align-items-center">
+            <i class="fas fa-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </form>
+      <% } %>
+  
+      <div class="logo">
+        <h1>Super Store</h1>
+        <p>Premium Since 1999</p>
+      </div>
+      
+      <div class="user-options">
+        <a href="/login" aria-label="Account">
+          <i class="fas fa-user"></i> Account
+        </a>
+        <a href="/cart" aria-label="Shopping Cart">
+          <i class="fas fa-shopping-cart"></i> Cart
+        </a>
+      </div>
+    </div>
+  </header>
+  

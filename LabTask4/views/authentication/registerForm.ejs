@@ -1,0 +1,60 @@
+<body>
+  <section class="wrapper">
+    <div class="container justify-content-center align-items-center d-flex">
+      <div class="form signup">
+        <h2>Signup</h2>
+
+        <% if (messages && messages.length > 0) { %> <!-- Ensure messages is checked -->
+          <div class="alert flash-message">
+            <% messages.forEach(function(message) { %>
+              <h5><%= message %></h5>
+            <% }); %>
+          </div>
+        <% } %>
+        
+
+        <form action="/register" method="POST">
+          <div class="input-field">
+            <input type="text" name="name" required />
+            <label>Full name</label>
+          </div>
+          <div class="input-field">
+            <input type="email" name="email" required />
+            <label>Email address</label>
+          </div>
+          <div class="input-field">
+            <label for="password">Password:</label>
+            <input type="password" name="password" required />
+          </div>
+          <div class="checkbox forget">
+            <input type="checkbox" id="signupCheck" />
+            <label for="signupCheck">I accept all terms & conditions</label>
+          </div>
+          <input type="submit" value="Signup" />
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+<script>
+  // Wait for the DOM to be ready
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all flash message containers
+    const flashMessages = document.querySelectorAll('.flash-message');
+    
+    // Loop through each flash message
+    flashMessages.forEach(function(flashMessage) {
+      // Set a timeout to remove the flash message after 5 seconds
+      setTimeout(function() {
+        // Add a fade-out effect
+        flashMessage.style.transition = "opacity 1s ease-out"; // Fade-out effect
+        flashMessage.style.opacity = 0; // Start fading out
+        // Optionally remove the message from the DOM after it fades
+        setTimeout(function() {
+          flashMessage.remove(); // Remove the message from the DOM after fade-out
+        }, 1000); // Wait for the fade-out to finish (1 second)
+      }, 5000); // Set the timer to 5 seconds before starting the fade-out
+    });
+  });
+</script>
+

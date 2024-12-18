@@ -1,0 +1,50 @@
+<h4>Edit Product</h4>
+
+
+<form action="/admin/products/edit/<%= product._id %>" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="titleInput">Title</label>
+    <input name="title" type="text" class="form-control" id="titleInput" placeholder="Enter Title" value="<%= product.title %>" />
+    <small class="form-text text-muted">Product Title</small>
+  </div>
+
+  <div class="form-group">
+    <label for="descriptionInput">Description</label>
+    <textarea name="description" class="form-control" id="descriptionInput" placeholder="Enter Description"><%= product.description %></textarea>
+    <small class="form-text text-muted">Product Details</small>
+  </div>
+
+  <div class="form-group">
+    <label for="priceInput">Price</label>
+    <input name="price" type="text" class="form-control" id="priceInput" placeholder="Enter Price" value="<%= product.price %>" />
+    <small class="form-text text-muted">Product Price in PKR</small>
+  </div>
+
+  <div class="form-group">
+    <label for="categorySelect">Category</label>
+    <select name="category" class="form-control" id="categorySelect">
+      <% categories.forEach((category) => { %>
+        <option value="<%= category._id %>" <%= category._id == product.category._id ? 'selected' : '' %>><%= category.name %></option>
+      <% }); %>
+    </select>
+    <small class="form-text text-muted">Select a category for the product</small>
+  </div>
+
+  <!-- Display existing product image if available -->
+  <% if (product.image) { %>
+    <div class="form-group">
+      <label>Current Image:</label>
+      <img src="<%= product.image %>" alt="Product Image" width="100" />
+    </div>
+  <% } %>
+
+  <!-- File upload input to change image -->
+  <div class="form-group">
+    <input name="file" type="file" class="form-control" id="imageInput" accept="image/*" />
+    <small class="form-text text-muted">Upload a new product image (optional)</small>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-info">Update Product</button>
+  </div>
+</form>

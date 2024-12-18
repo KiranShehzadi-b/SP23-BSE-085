@@ -1,0 +1,149 @@
+
+h1{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: yellow;
+}
+
+#menu li{
+    display: inline;
+}
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Top bar styling */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding: 5px 10px;
+    background-color: #f5f5f5;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 5px;
+}
+
+.search-bar i {
+    color: black;
+    margin-left: 5px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo p {
+    font-size: 12px;
+    color: #666;
+}
+
+.user-options {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.user-options a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: white;
+    border-top: 1px solid #ddd;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 10px 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+.product-image {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+/* Flash messages container */
+/* Flash messages container */
+.flash-messages {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    max-width: 300px;
+}
+
+/* Flash message styling */
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+/* Success message */
+.flash-message{
+    background-color:gold; /* Green */
+    border: 2px solid #218838;
+}
+
+
