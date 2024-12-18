@@ -1,0 +1,38 @@
+<h4>Create Category</h4>
+<p>If we do not give the action attribute, the form is submitted to the URL on which it was rendered.</p>
+
+<form action="/admin/categories/create" method="post">
+  <!-- Category Name -->
+  <div class="form-group">
+    <label for="nameInput">Category Name</label>
+    <input 
+      name="name" 
+      type="text" 
+      class="form-control" 
+      id="nameInput" 
+      placeholder="Enter Category Name" 
+      required 
+    />
+    <small class="form-text text-muted">Category Name is required.</small>
+  </div>
+  
+  <!-- Product Count -->
+  <div class="form-group">
+    <label for="productCountInput">Product Count</label>
+    <input 
+      name="productCount" 
+      type="number" 
+      class="form-control" 
+      id="productCountInput" 
+      placeholder="Enter Product Count" 
+      value="0" 
+      min="0" 
+    />
+    <small class="form-text text-muted">Number of products in this category. Defaults to 0.</small>
+  </div>
+  
+  <!-- Submit Button -->
+  <div class="form-group">
+    <button class="btn btn-info">Create New Category</button>
+  </div>
+</form>

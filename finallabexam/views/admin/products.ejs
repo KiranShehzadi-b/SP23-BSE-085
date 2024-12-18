@@ -1,0 +1,116 @@
+<h3><%- pageTitle %></h3>
+<!-- Success message -->
+<% if (messages && messages.length > 0) { %> <!-- Ensure messages is checked -->
+  <div class="alert flash-message">
+    <% messages.forEach(function(message) { %>
+      <h5><%= message %></h5>
+    <% }); %>
+  </div>
+<% } %>
+<a href="/admin/products/create" class="btn btn-info">Create New Product</a>
+
+<form action="/admin/products" method="GET" class="mb-4 d-flex justify-content-between align-items-center">
+  <!-- Filter Input -->
+  <div class="input-group w-50">
+      <label class="input-group-text" for="filter">Filter By</label>
+      <select class="form-select" name="filterBy" id="filter">
+          <option value="">Select Filter</option>
+          <% categories.forEach(category => { %>
+              <option value="<%= category._id %>">
+                  <%= category.name %>
+              </option>
+          <% }) %>
+      </select>
+      <button type="submit" class="btn btn-secondary">
+          <i class="bi bi-funnel"></i> <!-- Filter Icon -->
+      </button>
+  </div>
+</form>
+
+<!-- Sort Form -->
+<form action="/admin/products" method="GET" class="mb-4 d-flex justify-content-between align-items-center">
+  <!-- Sort By Price -->
+  <div class="input-group w-25">
+      <label class="input-group-text" for="sort">Sort By Price</label>
+      <select class="form-select" name="sortBy" id="sort">
+          <option value="">Select</option>
+          <option value="asc">Low to High</option>
+          <option value="desc">High to Low</option>
+      </select>
+      <button type="submit" class="btn btn-secondary">
+          <i class="bi bi-arrow-down-up"></i> <!-- Sort Icon -->
+      </button>
+  </div>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (let index = 0; index < products.length; index++) { %>
+            <tr>
+                <td>
+                    <img 
+                        src="<%= products[index].image ? products[index].image : '/images/placeholder.svg' %>" 
+                        alt="<%= products[index].title ? products[index].title : 'Product image' %>" 
+                        class="product-image"
+                    />
+                </td>
+                <td><%= products[index].title %></td>
+                <td><%= products[index].description %></td>
+                <td>PKR <%= products[index].price %></td>
+                <td>
+                    <%= products[index].category ? products[index].category.name : 'No Category' %>
+                </td>
+                <td>
+                    <a href="/admin/products/edit/<%= products[index]._id %>" class="btn btn-warning">Edit</a>
+                    <a 
+                        href="/admin/products/delete/<%= products[index]._id %>" 
+                        class="btn btn-danger" 
+                        onclick="return confirm('Are you sure you want to delete this product?')"
+                    >
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+<ul class="pagination justify-content-center p-3">
+  <!-- Previous Button -->
+  <li class="page-item <%= currentPage == 1 ? 'disabled' : '' %>">
+      <a class="page-link text-secondary" href="/admin/products?page=<%= currentPage - 1 %>">Previous</a>
+  </li>
+
+  <!-- Loop to generate page numbers -->
+  <% for (let pageIndex = 1; pageIndex <= totalPageCount; pageIndex++) { %>
+      <li class="page-item <%= currentPage == pageIndex ? 'active' : '' %>">
+          <a class="page-link <%= currentPage == pageIndex ? 'bg-secondary text-white' : 'text-secondary' %>" 
+             href="/admin/products?page=<%= pageIndex %>">
+             <%= pageIndex %>
+          </a>
+      </li>
+  <% } %>
+
+  <!-- Next Button -->
+  <li class="page-item <%= currentPage == totalPageCount ? 'disabled' : '' %>">
+      <a class="page-link text-secondary" href="/admin/products?page=<%= currentPage + 1 %>">Next</a>
+  </li>
+</ul>
+
+  
+  <div class="pagination mb-3 justify-content-center">
+    Page <%= currentPage %> of <%= totalPageCount %>
+  </div>
+  
+<!-- Back to Dashboard Button -->
+<a href="/admin/dashboard" class="btn btn-secondary mt-3">Back To Dashboard</a>

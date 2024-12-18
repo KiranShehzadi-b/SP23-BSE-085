@@ -1,0 +1,83 @@
+
+<h4 class="text-center mb-4">My Featured Products</h4>
+<div class="container">
+<% if (messages && messages.length > 0) { %>
+  <div class="alert alert-info flash-message">
+      <ul>
+          <% messages.forEach(function(message) { %>
+              <p><%= message %></p>
+          <% }) %>
+      </ul>
+  </div>
+<% } %>
+</div>
+
+<div class="row g-4">
+  <% for(let index = 0; index < products.length; index++) { %>
+      <div class="col-12 col-md-4">
+          <div class="card" style="width: 100%; max-width: 18rem;">
+              <img 
+                src="<%= products[index].image ? products[index].image : 'https://raw.githubusercontent.com/mua22/fa24-web-technologies/9e1d5f8d0a80cf95043b73badcfcfb3c5b33b15c/sp23-bse-b/express-demo/public/images/placeholder.svg' %>" 
+                class="card-img-top" 
+                alt="<%= products[index].title %>" 
+                style="height: 200px; object-fit: cover;"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center "><%= products[index].title %></h5>
+                <p class="card-text text-center "><%= products[index].description %></p>
+                <div class="text-center my-3">
+                  <p class="fw-bold mb-2">PKR: <%=products[index].price %></p>
+                  <a href="/add-to-cart/<%= products[index]._id %>" class="btn btn-primary">Add To Cart</a>
+                </div>
+              </div>
+          </div>
+      </div>
+  <% } %>
+</div>
+<ul class="pagination justify-content-center p-3">
+  <!-- Previous Button -->
+  <li class="page-item <%= currentPage == 1 ? 'disabled' : '' %>">
+    <a class="page-link text-secondary" href="/homePage?page=<%= currentPage - 1 %>">Previous</a>
+  </li>
+
+  <!-- Loop to generate page numbers -->
+  <% for (let pageIndex = 1; pageIndex <= totalPageCount; pageIndex++) { %>
+    <li class="page-item <%= currentPage == pageIndex ? 'active' : '' %>">
+      <a class="page-link <%= currentPage == pageIndex ? 'bg-secondary text-white' : 'text-secondary' %>" 
+         href="/homePage?page=<%= pageIndex %>">
+         <%= pageIndex %>
+      </a>
+    </li>
+  <% } %>
+
+  <!-- Next Button -->
+  <li class="page-item <%= currentPage == totalPageCount ? 'disabled' : '' %>">
+    <a class="page-link text-secondary" href="/homePage?page=<%= currentPage + 1 %>">Next</a>
+  </li>
+</ul>
+
+<div class="pagination mb-3 justify-content-center">
+  Page <%= currentPage %> of <%= totalPageCount %>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Find all flash message containers
+  const flashMessages = document.querySelectorAll('.flash-message');
+
+  // Loop through each flash message
+  flashMessages.forEach(function(flashMessage) {
+    // Set a timeout to start the fade-out effect after 5 seconds
+    setTimeout(function() {
+      // Add the fade-out class to trigger the effect
+      flashMessage.classList.add('fade-out');
+      
+      // Optionally, remove the message from the DOM after it fades out
+      setTimeout(function() {
+        flashMessage.remove(); // Remove the message from the DOM after fade-out
+      }, 1000); // Wait for the fade-out transition to finish (1 second)
+    }, 5000); // Set the timer to 5 seconds before starting the fade-out
+  });
+});
+</script>

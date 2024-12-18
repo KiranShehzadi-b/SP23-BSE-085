@@ -1,0 +1,77 @@
+<body>
+  <div class="container mt-5">
+    <h4>Place Your Order</h4>
+    <% if (messages.length > 0) { %>
+      <div class="alert alert-danger">
+        <%= messages[0] %>
+      </div>
+    <% } %>
+
+    <form action="/orders/place" method="POST">
+      <!-- Name -->
+      <div class="form-group">
+        <label for="nameInput">Name</label>
+        <input
+          name="name"
+          type="text"
+          class="form-control"
+          id="nameInput"
+          placeholder="Enter your full name"
+          required
+        />
+        <small class="form-text text-muted">Your full name</small>
+      </div>
+
+      <!-- Street -->
+      <div class="form-group">
+        <label for="streetInput">Street</label>
+        <input
+          name="street"
+          type="text"
+          class="form-control"
+          id="streetInput"
+          placeholder="Enter your street address"
+          required
+        />
+        <small class="form-text text-muted">Street address</small>
+      </div>
+
+      <!-- Postal Code -->
+      <div class="form-group">
+        <label for="postalCodeInput">Postal Code</label>
+        <input
+          name="postalCode"
+          type="text"
+          class="form-control"
+          id="postalCodeInput"
+          placeholder="Enter your postal code"
+          required
+        />
+        <small class="form-text text-muted">Postal code</small>
+      </div>
+
+      <!-- City -->
+      <div class="form-group">
+        <label for="cityInput">City</label>
+        <select name="city" class="form-control" id="cityInput" required>
+          <option value="" disabled selected>Select your city</option>
+          <option value="Karachi">Karachi</option>
+          <option value="Lahore">Lahore</option>
+          <option value="Islamabad">Islamabad</option>
+          <option value="Peshawar">Peshawar</option>
+          <option value="Quetta">Quetta</option>
+        </select>
+        <small class="form-text text-muted">City of delivery</small>
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-group d-flex justify-content-between">
+        <!-- Back to Cart Button -->
+        <a href="/cart" class="btn btn-secondary">Back to Cart</a>
+
+        <!-- Place Order Button -->
+        <button type="submit" class="btn btn-info">Place Order</button>
+      </div>
+    </form>
+  </div>
+</body>
