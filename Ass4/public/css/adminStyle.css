@@ -1,0 +1,104 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dashboard-container {
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+/* Welcome Text Styling */
+.dashboard-container h1 {
+    font-size: 2.5rem;
+    color: #007bff; /* Blue color */
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase; /* Optional, for a more polished look */
+    background: none;
+}
+
+/* Paragraph Styling */
+.dashboard-container p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+/* Button Styling */
+.dashboard-buttons a {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.1rem; /* Increased font size */
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: all 0.3s;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Buttons */
+.dashboard-buttons a:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Active Button Effect */
+.dashboard-buttons a:active {
+    transform: translateY(0);
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+}
+/* Flash message styling */
+/* Flash message styling */
+.flash-message {
+    color: white; /* Set the text color to white */
+    background-color: transparent; /* Set the background color to transparent */
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    /* Optional: Add a border to make the message stand out */
+  }
+  
+  .flash-message ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .flash-message li {
+    margin: 5px 0; /* Add some spacing between messages */
+  }
+  

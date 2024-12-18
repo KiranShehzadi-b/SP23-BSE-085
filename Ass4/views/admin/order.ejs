@@ -1,0 +1,102 @@
+<body>
+  <div class="container mt-5">
+    <h4>Place Your Order</h4>
+    <% if (messages.length > 0) { %>
+      <div class="alert alert-danger">
+        <%= messages[0] %>
+      </div>
+    <% } %>
+    
+    <form action="/orders/place" method="POST">
+      <!-- User Email -->
+      <div class="form-group">
+        <label for="emailInput">Email</label>
+        <input
+          name="email"
+          type="email"
+          class="form-control"
+          id="emailInput"
+          placeholder="Enter your email address"
+          required
+        />
+        <small class="form-text text-muted">Your email address</small>
+      </div>
+
+      <!-- Country -->
+      <div class="form-group">
+        <label for="countryInput">Country</label>
+        <select name="country" class="form-control" id="countryInput" required>
+          <option value="Pakistan" selected>Pakistan</option>
+        </select>
+        <small class="form-text text-muted">Country of delivery</small>
+      </div>
+
+      <!-- Address -->
+      <div class="form-group">
+        <label for="addressInput">Address</label>
+        <input
+          name="address"
+          type="text"
+          class="form-control"
+          id="addressInput"
+          placeholder="Enter your complete address"
+          required
+        />
+        <small class="form-text text-muted">Delivery address</small>
+      </div>
+
+      <!-- City -->
+      <div class="form-group">
+        <label for="cityInput">City</label>
+        <select name="city" class="form-control" id="cityInput" required>
+          <option value="" disabled selected>Select your city</option>
+          <option value="Karachi">Karachi</option>
+          <option value="Lahore">Lahore</option>
+          <option value="Islamabad">Islamabad</option>
+          <option value="Peshawar">Peshawar</option>
+          <option value="Quetta">Quetta</option>
+        </select>
+        <small class="form-text text-muted">City of delivery</small>
+      </div>
+
+      <!-- Total Price -->
+      <div class="form-group">
+        <label for="totalPrice">Total Price</label>
+        <input
+          type="text"
+          class="form-control"
+          id="totalPrice"
+          name="totalAmount"
+          value="<%= totalAmount %> PKR"
+          readonly
+        />
+        <small class="form-text text-muted">Total amount to pay</small>
+      </div>
+
+      <!-- Payment Method -->
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method</label>
+        <select
+          name="paymentMethod"
+          class="form-control"
+          id="paymentMethod"
+          required
+        >
+          <option value="Cash" selected>Cash</option>
+        </select>
+        <small class="form-text text-muted"
+          >Currently, only cash payment is supported</small
+        >
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-group d-flex justify-content-between">
+        <!-- Back to Cart Button -->
+        <a href="/cart" class="btn btn-secondary">Back to Cart</a>
+
+        <!-- Place Order Button -->
+        <button type="submit" class="btn btn-info">Place Order</button>
+      </div>
+    </form>
+  </div>
+</body>

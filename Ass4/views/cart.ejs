@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="flash-messages">
+      <% if (messages.length > 0) { %>
+        <% messages.forEach(function(msg) { %>
+          <div class="alert alert-success"><%= msg %></div>
+        <% }); %>
+      <% } %>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center my-4">
+      <h4>Shopping Cart</h4>
+      <!-- Close Button with link to /homePage -->
+      <a href="/homePage" class="btn btn-secondary">Close</a>
+  </div>
+
+  <% if (messages && messages.length > 0) { %> <!-- Ensure messages are checked -->
+      <div class="alert flash-message">
+        <% messages.forEach(function(message) { %>
+          <h5><%= message %></h5>
+        <% }); %>
+      </div>
+  <% } %>
+
+  <table class="table table-bordered">
+      <thead>
+          <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th> <!-- Add a new column for the delete button -->
+          </tr>
+      </thead>
+      <tbody>
+          <% products.forEach(product => { %>
+              <tr>
+                  <td><%= product.title %></td>
+                  <td>$<%= product.price.toFixed(2) %></td>
+                  <td>
+                      <form action="/update-quantity/<%= product._id %>" method="POST" class="d-flex align-items-center">
+                          <input type="number" name="quantity" 
+                                 value="<%= product.quantity %>" 
+                                 min="1" 
+                                 class="form-control form-control-sm me-1"
+                                 style="width: 60px;" />
+                          <button type="submit" class="btn btn-sm btn-warning">Update</button>
+                      </form>
+                  </td>
+                  <td>$<%= product.amount.toFixed(2) %></td>
+                  <td>
+                      <!-- Cross button to delete the product -->
+                      <form action="/remove-product/<%= product._id %>" method="POST">
+                          <button type="submit" class="btn btn-sm btn-danger">×</button>
+                      </form>
+                  </td>
+              </tr>
+          <% }) %>
+      </tbody>
+  </table>
+
+  <!-- Display the total amount of all products in the cart -->
+  <div class="d-flex justify-content-between align-items-center my-4">
+      <h4>Total: $<%= totalAmount.toFixed(2) %></h4>
+      <!-- Optionally add a checkout button -->
+      <a href="/orders/place" class="btn btn-secondary">Checkout</a>
+  </div>
+
+  <script>
+      // Wait for the DOM to be ready
+      document.addEventListener('DOMContentLoaded', function() {
+        // Find all flash message containers
+        const flashMessages = document.querySelectorAll('.flash-message');
+        
+        // Loop through each flash message
+        flashMessages.forEach(function(flashMessage) {
+          // Set a timeout to remove the flash message after 5 seconds
+          setTimeout(function() {
+            // Add a fade-out effect
+            flashMessage.style.transition = "opacity 1s ease-out"; // Fade-out effect
+            flashMessage.style.opacity = 0; // Start fading out
+            // Optionally remove the message from the DOM after it fades
+            setTimeout(function() {
+              flashMessage.remove(); // Remove the message from the DOM after fade-out
+            }, 1000); // Wait for the fade-out to finish (1 second)
+          }, 5000); // Set the timer to 5 seconds before starting the fade-out
+        });
+      });
+  </script>
+</div>
